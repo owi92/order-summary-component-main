@@ -4,6 +4,7 @@
     background     
 ================*/
 body {
+  position: relative;
   background: url(images/pattern-background-mobile.svg);
   background-color: hsl(225, 100%, 94%);
   background-repeat: no-repeat;
@@ -17,12 +18,12 @@ body {
 ==========*/
 .card {
   margin: auto;
-  margin-top: 7vh;
-  padding-bottom: 2rem;
+  margin-top: min(13vw, 5rem);
+  padding-bottom: min(8.5vw, 3rem);
   border-radius: 18px;
 
   background-color: #fff;
-  max-width: min(100%, 22rem);
+  max-width: min(100%, 28rem);
 
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
 }
@@ -33,9 +34,9 @@ body {
 }
 
 .card__heading {
-  font-size: 1.4rem;
+  font-size: min(5.9vw, 1.77rem);
   text-align: center;
-  padding-top: 0.75rem;
+  padding-top: min(3vw, 1.5rem);
 
   font-weight: 800;
   color: hsl(223, 50%, 31%);
@@ -43,7 +44,7 @@ body {
 
 .card__description {
   text-align: center;
-  padding: 0 2rem;
+  padding: 0 min(8.5vw, 3rem);
 
   font-weight: 500;
   color: hsl(224, 23%, 55%, 0.7);
@@ -59,8 +60,9 @@ body {
   gap: 0;
   grid-template-columns: 25% 50% 25%;
 
-  margin: 1.5rem;
-  padding: 1rem 0.6rem;
+  margin: min(2rem, 2vw) min(5.5vw, 3rem);
+  margin-top: 1.3rem;
+  padding: min(4.5vw, 1.5rem) 0.6rem;
   border-radius: 12px;
 }
 
@@ -70,17 +72,17 @@ body {
 
 .card__heading-price,
 .card__price {
-  margin-left: 0.8rem;
+  margin-left: min(3vw, 0.2rem);
 }
 
 .card__heading-price {
-  font-size: 0.9rem;
+  font-size: min(4vw, 1rem);
   font-weight: 900;
   color: hsl(223, 50%, 31%);
 }
 
 .card__price {
-  font-size: 0.9rem;
+  font-size: min(3.7vw, 1rem);
   font-weight: 600;
   color: hsl(224, 23%, 55%, 0.75);
 }
@@ -93,6 +95,7 @@ body {
   font-family: 'red hat display', sans-serif;
 
   text-decoration: underline;
+  text-decoration-thickness: 1.3px;
   background-color: hsl(225, 100%, 98%);
 
   transition: all 0.2s ease-in-out;
@@ -121,19 +124,18 @@ body {
   background-color: hsl(245, 75%, 52%);
   font-weight: 700;
   font-size: 0.9rem;
+  margin: 1.5rem min(5.5vw, 3rem);
 
-  width: 87%;
   padding: 1em 4em;
-  margin-bottom: 1rem;
   border-radius: 9px;
-
-  box-shadow: 0 1rem 1rem hsl(245, 75%, 52%, 0.18);
+  width: min(87.4%, 22rem);
+  box-shadow: 0 1rem 1rem hsl(245, 75%, 52%, 0.1);
 }
 
 .card__btn-cancel {
   border: none;
   background-color: transparent;
-  margin-top: 1.5rem;
+  margin-top: 2vw;
 
   font-size: 0.95rem;
   font-weight: 900;
