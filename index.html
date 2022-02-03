@@ -17,20 +17,20 @@
     />
 
     <!-- css-styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
 
     <title>Frontend Mentor | Order summary card</title>
   </head>
 
   <body>
-    <main>
-      <div class="card">
-        <img
-          src="images/illustration-hero.svg"
-          alt="dancing person"
-          class="card__img"
-        />
+    <main class="card">
+      <img
+        src="images/illustration-hero.svg"
+        alt="dancing person"
+        class="card__img"
+      />
 
+      <div class="card__display">
         <h1 class="card__heading">Order Summary</h1>
 
         <p class="card__description">
@@ -53,11 +53,18 @@
           <p class="card__price">$59.99/year</p>
         </div>
 
-        <button class="card__btn-proceed">Proceed to Payment</button>
+        <button class="card__btn-proceed">
+          Proceed
+          <span class="card__span--hidden">to Payment</span>
+        </button>
 
-        <button class="card__btn-cancel">Cancel Order</button>
+        <button class="card__btn-cancel">
+          Cancel
+          <span class="card__span--hidden">Order</span>
+        </button>
       </div>
     </main>
+
     <footer>
       <div class="attribution">
         Challenge by
