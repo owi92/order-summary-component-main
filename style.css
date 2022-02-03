@@ -1,48 +1,165 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
 
-/* global */
+/*================
+    background     
+================*/
 body {
+  background: url(images/pattern-background-mobile.svg);
   background-color: hsl(225, 100%, 94%);
-  background-image: url(images/pattern-background-desktop.svg);
   background-repeat: no-repeat;
-  font-family: 'Red Hat Display', sans-serif;
+  padding: 1.5rem;
   margin: 0;
-  padding: 4rem min(5vw, 1rem) 0;
+
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 18px;
   margin: auto;
-  max-width: min(100%, 28rem);
+  margin-top: min(13vw, 4rem);
+  border-radius: 18px;
+  background-color: #fff;
+  max-width: min(100%, 21rem);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
 }
 
-/* content */
+/*=============
+    content       
+=============*/
 .card__img {
-  max-width: 100%;
   border-radius: 18px 18px 0 0;
+  max-width: 100%;
 }
 
-/* below image */
+/*=================
+    below image      
+=================*/
 .card__display {
-  padding: min(4.6vw, 1.2rem);
+  padding: min(2vw, 1.8rem) min(6.5vw, 2rem);
 }
 
 .card__heading {
-  font-size: min(5.9vw, 1.77rem);
+  font-size: min(5.9vw, 1.5rem);
   text-align: center;
-  /* padding-top: min(3vw, 1.5rem); */
-  font-weight: 800;
+  font-weight: 900;
   color: hsl(223, 50%, 31%);
 }
 
 .card__description {
   text-align: center;
-  padding: 0 min(5vw, 2rem);
-  font-weight: 500;
+  padding: 0 0.3rem;
+  font-weight: 400;
   color: hsl(224, 23%, 55%, 0.7);
   line-height: 1.5;
+}
+
+/*=======================
+    pricing-container      
+=======================*/
+.card__container {
+  background-color: hsl(225, 100%, 98%);
+  display: grid;
+  gap: 0;
+  grid-template-columns: 25% 50% 25%;
+  padding: min(4.5vw, 1rem) 0.6rem;
+  border-radius: 12px;
+}
+
+.card__container * {
+  margin: auto;
+}
+
+.card__heading-price,
+.card__price {
+  margin-left: min(3vw, 0.2rem);
+}
+
+.card__heading-price {
+  font-size: min(4vw, 0.8rem);
+  font-weight: 900;
+  color: hsl(223, 50%, 31%);
+}
+
+.card__price {
+  font-size: min(3.7vw, 0.8rem);
+  font-weight: 600;
+  color: hsl(224, 23%, 55%, 0.75);
+}
+
+.card__btn-change {
+  border: none;
+  font-weight: 700;
+  font-size: min(3.3vw, 0.7rem);
+  color: hsl(245, 75%, 52%);
+  font-family: 'red hat display', sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  text-decoration-thickness: 1.3px;
+  background-color: hsl(225, 100%, 98%);
+
+  transition: all 0.2s ease-in-out;
+}
+
+/* util */
+.card--grid-row-span2 {
+  grid-row: span 2;
+}
+
+/*==============================
+    buttons proceed + cancel   
+==============================*/
+.card__btn-proceed,
+.card__btn-cancel {
+  margin: auto;
+  font-family: 'Red Hat Display', sans-serif;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.card__btn-proceed {
+  display: block;
+  width: 100%;
+  background-color: hsl(245, 75%, 52%);
+  font-size: min(6vw, 0.8rem);
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 1rem 4rem;
+  margin: min(7vw, 1.5rem) auto;
+  box-shadow: 0 1rem 1rem hsl(245, 75%, 52%, 0.1);
+}
+
+.card__btn-cancel {
+  display: block;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: hsl(223, 50%, 31%, 0.6);
+  text-shadow: hsl(223, 50%, 31%, 0.7);
+}
+
+/*==================
+    hover states  
+==================*/
+.card__btn-change:hover,
+.card__btn-proceed:hover,
+.card__btn-cancel:hover {
+  cursor: pointer;
+}
+
+.card__btn-proceed:hover {
+  background-color: hsl(245, 75%, 52%, 0.65);
+}
+
+.card__btn-change:hover {
+  color: hsl(245, 75%, 52%, 0.6);
+  text-decoration: none;
+}
+
+.card__btn-cancel:hover {
+  color: hsl(223, 50%, 31%);
 }
 
 /*======================
@@ -58,4 +175,75 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*===================
+    media-queries     
+===================*/
+@media (max-width: 250px) {
+  .card {
+    min-width: 12rem;
+  }
+  .card__description {
+    font-size: 10px;
+  }
+  .card__img-music,
+  .card__heading-price,
+  .card__span--hidden,
+  .card__btn-change {
+    display: none;
+  }
+  .card__price {
+    font-size: max(10vw, 1rem);
+  }
+  .card__btn-proceed {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .card__heading {
+    margin-top: 0;
+  }
+  .card__description {
+    font-size: 0.89rem;
+    font-weight: 500;
+  }
+  .card__btn-cancel {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .card {
+    max-width: 28rem;
+    margin-top: 6vw;
+  }
+  .card__display {
+    padding: 1.8rem 3rem;
+  }
+  .card__heading {
+    font-size: 1.77rem;
+  }
+  .card__description {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0 1.8rem;
+  }
+  .card__container {
+    padding: 1.5rem 0.5rem;
+    margin: 1.5rem auto 2rem;
+  }
+  .card__heading-price,
+  .card__price {
+    font-size: 1rem;
+  }
+  .card__btn-change {
+    font-size: 0.85rem;
+  }
+  .card__btn-proceed,
+  .card__btn-cancel {
+    font-size: 1rem;
+    margin-bottom: 1.35rem;
+  }
 }
